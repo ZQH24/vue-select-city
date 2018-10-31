@@ -19,7 +19,16 @@ Vue.use(vueCitySelect);
 | :--- | :--- | :--- |
 | cityData | Array<ProvinceDAO> | 供选择的城市数据集|
 | searchVal | String  | 搜索的内容 |
-| isSearch | String | 是否进行搜索 |
+| isSearch | Boolean | 是否进行搜索 |
+
+### isSearch的使用：配合input标签监听input的输入，如果输入不为空这认为触发搜索事件，否则不是
+handleInputCityArea (val) {
+  if (val !== '') {
+    this.isSearch = true
+  } else {
+    this.isSearch = false
+  }
+}
 
 ## 事件
 | 事件名 | 返回参数 | 描述 |
